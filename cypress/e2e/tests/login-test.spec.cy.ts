@@ -1,20 +1,24 @@
 import loginPageTS from "../../pages/login-page-ts";
 
-describe('Login Test', () => {
+describe('The spec file is to check TS with cypress', () => {
+
+  it('Check browser values',()=>{
+      cy.log(Cypress.browser.displayName)
+      cy.log(Cypress.browser.family)
+      cy.log(Cypress.browser.path)
+      cy.log(Cypress.browser.version)
+      cy.log((Cypress.browser.isHeaded).toString())
+      cy.log((Cypress.browser.isHeadless).toString())
+  })
  
-  const loginP = new loginPageTS(); // Create an instance of LoginPage
+  const loginP = new loginPageTS();
 
   it('should login successfully', () => {
     
     cy.visit("https://opensource-demo.orangehrmlive.com/");
-
-    // Use the Page Object's methods
-    cy.wait(2000);
    // loginPage.enterUsername('testUser');
     loginP.enterPassword('testPassword');
     loginP.clickLoginButton();
-
     // Add assertions to verify successful login
-    //cy.url().should('include', '/dashboard'); // Example assertion
   });
 });
