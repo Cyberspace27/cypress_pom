@@ -1,9 +1,18 @@
 import loginPage from "../../pages/login-page.js";
-import {loginPageB} from "../../pages/login-page-b.js";
+import {loginPageB} from "../../pages/login-page-static.js";
 
-describe("general test file description",()=>{
+describe("The spec file is to check JS with cypress",()=>{
 
-    it("test 1",()=>{
+    it('Check browser values',()=>{
+        cy.log(Cypress.browser.displayName)
+        cy.log(Cypress.browser.family)
+        cy.log(Cypress.browser.path)
+        cy.log(Cypress.browser.version)
+        cy.log(Cypress.browser.isHeaded)
+        cy.log(Cypress.browser.isHeadless)
+    })
+
+    it("test 1 to use a instance of a class or object",()=>{
         const lp = new loginPage();
         cy.visit("https://opensource-demo.orangehrmlive.com/");
          lp.setUserName("test");
@@ -11,18 +20,18 @@ describe("general test file description",()=>{
          lp.clickOnLogin();
          //lp.validateDasboardMsg();
     })
-    it.skip("test 2",()=>{
+    it.skip("test 2 to use a static class and functions",()=>{
        
         
          cy.visit("https://opensource-demo.orangehrmlive.com/");
-         cy.wait(3000);
-         const lpb = new loginPageB();
+         
          loginPageB.setUserName("test");
          loginPageB.setUserPassword("test");
          loginPageB.clickOnLogin();
          loginPageB.validateDasboardMsg();
          
           /*
+          const lpb = new loginPageB();
          lpb.setUserName("test");
          lpb.setUserPassword("test");
          lpb.clickOnLogin();
