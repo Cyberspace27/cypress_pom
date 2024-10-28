@@ -5,14 +5,14 @@ class loginPageTS {
  * Returns the Cypress Chainable for the username input field.
  */
   getUsernameField(): Cypress.Chainable<JQuery<HTMLElement>> {
-    return cy.get("input[name='username']"); 
+    return cy.get("input[data-test='username']"); 
   }
 
   /**
    * Returns the Cypress Chainable for the password input field.
    */
   getPasswordField(): Cypress.Chainable<JQuery<HTMLElement>> {
-    return cy.get("input[placeholder='Password']");
+    return cy.get("input[data-test='password']");
   }
 
   /**
@@ -20,7 +20,7 @@ class loginPageTS {
    * @returns Cypress.Chainable<JQuery<HTMLElement>>
    */
   getLoginButton(): Cypress.Chainable<JQuery<HTMLElement>> {
-    return cy.get("button[type='submit'].orangehrm-login-button"); 
+    return cy.get("input[data-test='login-button']"); 
   }
 
   /**
@@ -45,6 +45,7 @@ class loginPageTS {
   clickLoginButton(): void {
      this.getLoginButton().click();
   }
+
 }
 
 export default loginPageTS;
