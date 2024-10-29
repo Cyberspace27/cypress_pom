@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:runChrome": "cypress run --browser chrome"
+    "cypress:runChrome": "cypress run --browser chrome",
+    "cypress:runOnJenkins": "cypress run --browser chrome --headless --spec cypress/e2e/tests/login-test.spec.cy.js"
   },
   "author": "",
   "license": "ISC",

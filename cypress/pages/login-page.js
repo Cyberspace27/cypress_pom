@@ -27,12 +27,20 @@ class loginPage{
         cy.get(this.btnLogin).click();
         
     }
+    
 /**
- * Validates the dashboard message displayed after a successful login.
+ * Checks if the element located by the given selector has the expected text.
+ * @param {string} locator - The selector for the element to check.
+ * @param {string} textTocheck - The expected text content of the element.
  */
-    validateDasboardMsg() {
-       //need to be implemented 
+    checkDashboardText() {
+        //under build just for testing purposes
+        //cy.checkText(locator,textTocheck);
+        cy.checkText('span[class="title"]', 'OrangeHRM');
+        
     }
+
 }
-export default loginPage;
+module.exports = new loginPage();
+//export default loginPage;
 //export { loginPage }; // this line also works and I can add more then one class or interfaces from this file

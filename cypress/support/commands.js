@@ -23,3 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//For examples purpose
+Cypress.Commands.add('checkText',(locator, textTocheck) => {
+    cy.get(locator).should('have.text',textTocheck);
+})
